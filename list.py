@@ -1,25 +1,40 @@
 # Beautiful is better than ugly
 
-inventor = ['qiyana', 'mei', 'bronya']
-j = 0
-while j < len(inventor):
-    print("Who i wanna invite are " + inventor[j])
-    j += 1
-print(inventor[0] + " is not available")
-remover = inventor.pop(0)
-inventor.insert(0, "himoko")
-print("i invite " + inventor[0] + " to replace " + remover)
-i = 0
-while i < len(inventor):
-    print("now i invite" + inventor[i])
-    i += 1
-print("now i found a bigger table, so i can invite more person")
-inventor.insert(len(inventor)-1, "silee")
-inventor.insert(0, "fuhua")
-print(inventor)
-print("oh. the table cannot arrive on time")
-k = 0
-while k < len(inventor)-2:
-    print("i feel sorry "+inventor[k])
-    inventor.pop(k)
-print(inventor)
+"""wife_list = ["qiyana", "mei", "bronya", "seele"]
+print(wife_list)"""
+
+'''print("this is sorted list "+str(sorted(wife_list)))
+
+print("But it actually still this "+str(wife_list))
+
+print(sorted(wife_list, reverse=True))
+
+wife_list.reverse()
+wife_list.reverse()
+wife_list.sort(reverse=True)
+print(wife_list[0])'''
+
+'''for wife in wife_list:
+    print(wife.title() + ", i love you")
+    print("i cannot waiting for marriage with you")
+print("this is really i want")'''
+
+'''for value in range(1, 5):
+    print(value)
+numbers = list(range(1, 100, 5))
+print(numbers)'''
+
+'''number = [1, 2, 7, 4, 0]
+cars[1] = cars[1].upper()
+print(cars)
+cars.sort()
+number.sort()
+print(number)
+print(cars)
+cars.sort(reverse=True)
+print(cars)'''
+
+squares = []
+for value in range(1, 11):
+    squares.append(value**2)
+print(squares)

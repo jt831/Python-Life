@@ -1,4 +1,3 @@
-
 # Beautiful is better than ugly
 
 message = "Hello Python's "
