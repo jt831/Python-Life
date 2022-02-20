@@ -21,20 +21,28 @@ class Stack:
         return len(self.stack) == 0
 
 
-def brace_match(s):
-    match = {'{': '}', '[': ']', '(': ')'}
-    stack = Stack()
-    for ch in s:
-        if ch in {'{', '(', '['}:
-            stack.push(ch)
-        elif ch in {']', ')', '}'}:
-            if stack.is_empty():  # 匹配完成后']', ')', '}'还有需要匹配的
-                return False
-            elif stack.get_top() == match[ch]:
-                stack.pop()
-            elif stack.get_top() != match[ch]:  # 出现不匹配的
-                return False
-    if stack.is_empty():  # 匹配完成后'{', '(', '['还有没被匹配到的
-        return True
-    else:
-        return False
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def zigzagLevelOrder(self, root: TreeNode) :
+    if not root: return []
+    queue = [root]
+    res = []
+    layer = 0
+    while queue:
+        res.append([node.val for node in queue] if layer % 2 is 0
+                   else list(reversed([node.val for node in queue])))
+
+        children = []
+        for node in queue:
+            if node.left:
+                children.append(node.left)
+            if node.right:
+                children.append(node.right)
+        queue = children
+        layer += 1
+    return res

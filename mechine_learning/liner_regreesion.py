@@ -62,19 +62,31 @@ def gradientDescent(X, y, theta, learning_rate=0.01, times=1000):
     return theta, cost
 
 
-final_theta, cost = gradientDescent(X, y, theta, 0.01)
+def normalEqu(X, Y):
+    """
+    正规方程
 
+    :param X:
+    :param Y:
+    :return:
+    """
+    theta = np.linalg.inv(X.T.dot(X)).dot(X.T).dot(Y)
+    return theta
+
+
+final_theta, cost = gradientDescent(X, y, theta, 0.01)
+final_theta2 = normalEqu(X, y)
 
 x = np.linspace(data.Population.min(), data.Population.max(), 100)  # 横坐标
 f = final_theta[0, 0] + (final_theta[0, 1] * x)  # 纵坐标，利润
 
 fig, ax = plt.subplots(figsize=(6, 4))
-ax.plot(x, f, color="red", label='Prediction')  # 绘制折线图
-ax.scatter(data['Population'], data.Profit, label='Training Data')  # 绘制散点图
-ax.legend(loc="upper left")  # 设置图标。顺便说一句，没有这句，上面那些label设置了也没用
+ax.plot(x, f, color='red', label='Prediction')
+ax.scatter(data['Population'], data.Profit, label='Traning Data')
+ax.legend(loc='upper left')
 ax.set_xlabel('Population')
 ax.set_ylabel('Profit')
-ax.set_title('Predicted Profit vs. Population Size')
+ax.set_title('Predicted Profit vs Population Size')
 plt.show()
 
 
